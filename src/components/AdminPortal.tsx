@@ -8,6 +8,7 @@ import {
   Video,
   Plus,
   AlertTriangle,
+  AlertCircle,
   CheckCircle,
   Activity,
   Maximize2,
@@ -125,17 +126,6 @@ export const AdminPortal: React.FC = () => {
       if (adminConfig.telephonyProvider) setCfgProvider(adminConfig.telephonyProvider);
     }
   }, [adminConfig]);
-
-  // OTP Countdown timer
-  useEffect(() => {
-    let timer: any;
-    if (otpSent && otpCountdown > 0) {
-      timer = setInterval(() => {
-        setOtpCountdown((c) => c - 1);
-      }, 1000);
-    }
-    return () => clearInterval(timer);
-  }, [otpSent, otpCountdown]);
 
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
