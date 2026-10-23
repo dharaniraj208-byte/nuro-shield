@@ -511,7 +511,7 @@ export const INITIAL_REGISTERED_PATIENTS: PatientUser[] = [
 
 export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // Keep admin configuration state above callbacks that reference it during render.
-  const [adminPhone, setAdminPhone] = useState<string>('+91 98401 23456');
+  const [configuredAdminPhone, setAdminPhone] = useState<string>('+91 98401 23456');
 
   // Screen routing
   const [currentScreen, setCurrentScreen] = useState<'gateway' | 'patient_portal' | 'admin_portal'>('gateway');
@@ -722,7 +722,7 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       snapshot: alertToEscalate.snapshot,
     });
 
-    const targetDocPhone = patientUser?.doctorPhone || adminPhone || '+91 98401 23456';
+    const targetDocPhone = patientUser?.doctorPhone || configuredAdminPhone || '+91 98401 23456';
     addNotification({
       title: `EMERGENCY DISPATCH: ${alertToEscalate.title}`,
       description: `Emergency alert, SMS and automated call dispatched to admin (${targetDocPhone}).`,
@@ -745,7 +745,7 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         reason: `${alertToEscalate.title}: ${alertToEscalate.details}`,
       }),
     }).catch((e) => console.warn('Outbound emergency voice call error:', e));
-  }, [logCameraEvent, addNotification, patientUser, adminPhone]);
+  }, [logCameraEvent, addNotification, patientUser, configuredAdminPhone]);
 
   const escalateCountdownAlertNow = useCallback(() => {
     if (countdownTimerRef.current) {
@@ -2273,7 +2273,7 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         console.warn('Backend emergency dispatch failed:', err);
       }
     },
-    [adminPhone, facialSymmetry, immobilityTime, language, patientUser, playSirenTone, speakText]
+    [configuredAdminPhone, facialSymmetry, immobilityTime, language, patientUser, playSirenTone, speakText]
   );
 
   useEffect(() => {
@@ -2359,14 +2359,14 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // Direct Outbound Emergency Telephone Call to Admin Mobile
   const callAdminPhoneRealtime = useCallback(async () => {
-    const cleanPhone = adminPhone.replace(/[\s()-]/g, '');
+    const cleanPhone = configuredAdminPhone.replace(/[\s()-]/g, '');
     try {
       await fetch('/api/emergency/call-admin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          adminPhone,
-          patientName: patientUser?.name || 'Ramesh Sundaram',
+        adminPhone: configuredAdminPhone,
+        patientName: patientUser?.name || 'Ramesh Sundaram',
           room: patientUser?.room || 'Rehab Bay 104',
           reason: 'Emergency Phone Call Triggered by Patient'
         })
@@ -2383,7 +2383,7 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     } catch {
       // Browser tel: navigation fallback
     }
-  }, [adminPhone, patientUser, triggerEmergency]);
+  }, [configuredAdminPhone, patientUser, triggerEmergency]);
 
   // Voice Assistant Manual Trigger
   const triggerVoiceAssistant = useCallback(() => {
@@ -2626,8 +2626,8 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         sendOtpSms,
         adminUser,
         setAdminUser,
-        adminPhone,
-        setAdminPhone,
+    adminPhone: configuredAdminPhone,
+    setAdminPhone,
         isAdminLoggedIn,
         setIsAdminLoggedIn,
         loginAdminDirectly,
