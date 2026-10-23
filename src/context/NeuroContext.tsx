@@ -510,6 +510,9 @@ export const INITIAL_REGISTERED_PATIENTS: PatientUser[] = [
 ];
 
 export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Keep admin configuration state above callbacks that reference it during render.
+  const [adminPhone, setAdminPhone] = useState<string>('+91 98401 23456');
+
   // Screen routing
   const [currentScreen, setCurrentScreen] = useState<'gateway' | 'patient_portal' | 'admin_portal'>('gateway');
   const [portal, setPortalState] = useState<'patient' | 'admin'>('patient');
@@ -1057,7 +1060,6 @@ export const NeuroProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     } catch {}
     return null;
   });
-  const [adminPhone, setAdminPhone] = useState<string>('+91 98401 23456');
   const [isAdminLoggedIn, setIsAdminLoggedIn] = useState<boolean>(() => {
     try {
       const stored = localStorage.getItem('neurolife_admin_logged_in');
