@@ -55,7 +55,7 @@ const MainApp: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-sky-500 selection:text-white transition-colors duration-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-orange-500 selection:text-white transition-colors duration-200">
       {/* Top Universal Navbar in signature medical blue & clean white */}
       <header className="sticky top-0 z-30 border-b border-slate-200/80 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between gap-4">
@@ -66,19 +66,19 @@ const MainApp: React.FC = () => {
               className="flex items-center gap-3 text-left group"
               title="Return to Portal Gateway"
             >
-              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-sky-500 via-teal-500 to-emerald-400 text-white shadow-md shadow-sky-500/25 group-hover:scale-105 transition-transform">
+              <div className="relative flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-orange-500 via-[#c9573e] to-[#8f3f2f] text-white shadow-md shadow-orange-500/25 group-hover:scale-105 transition-transform">
                 <Activity className="h-6 w-6 animate-pulse" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
                   <h1 className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
-                    Neuro<span className="text-sky-600 dark:text-sky-400">Shield</span>
+                    Neuro<span className="text-[#c9573e] dark:text-[#f2947f]">Shield</span>
                   </h1>
                   <span
                     className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono font-bold border ${
                       portal === 'patient'
-                        ? 'bg-sky-50 dark:bg-sky-950/70 text-sky-700 dark:text-sky-300 border-sky-300 dark:border-sky-800'
-                        : 'bg-emerald-50 dark:bg-emerald-950/70 text-emerald-700 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
+                        ? 'bg-orange-50 dark:bg-orange-950/70 text-orange-700 dark:text-orange-300 border-orange-300 dark:border-[#713022]'
+                        : 'bg-[#fef0ed] dark:bg-[#3a1710] text-[#b94f39] dark:text-[#f2947f] border-[#f4b8aa] dark:border-[#713022]'
                     }`}
                   >
                     {portal === 'patient' ? 'PATIENT SENTINEL' : 'ADMIN COMMAND'}
@@ -99,7 +99,7 @@ const MainApp: React.FC = () => {
                 onClick={() => setPortal('patient')}
                 className={`flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition-all ${
                   portal === 'patient'
-                    ? 'bg-sky-600 text-white shadow-xs'
+                    ? 'bg-orange-600 text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
@@ -110,7 +110,7 @@ const MainApp: React.FC = () => {
                 onClick={() => setPortal('admin')}
                 className={`flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition-all ${
                   portal === 'admin'
-                    ? 'bg-emerald-600 text-white shadow-xs'
+                    ? 'bg-[#c9573e] text-white shadow-xs'
                     : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
@@ -123,10 +123,10 @@ const MainApp: React.FC = () => {
             {portal === 'patient' && (
               <button
                 onClick={triggerVoiceAssistant}
-                className="flex items-center gap-2 rounded-2xl border border-sky-300 dark:border-sky-800 bg-sky-50 dark:bg-sky-950/60 hover:bg-sky-100 dark:hover:bg-sky-900/60 px-3.5 py-2 text-xs font-bold text-sky-700 dark:text-sky-300 transition shadow-xs"
+                className="flex items-center gap-2 rounded-2xl border border-orange-300 dark:border-[#713022] bg-orange-50 dark:bg-orange-950/60 hover:bg-orange-100 dark:hover:bg-[#4d251a] px-3.5 py-2 text-xs font-bold text-orange-700 dark:text-orange-300 transition shadow-xs"
                 title="Activate Hey Neuro Voice AI"
               >
-                <Sparkles className="h-4 w-4 text-sky-500 animate-spin" style={{ animationDuration: '4s' }} />
+                <Sparkles className="h-4 w-4 text-orange-500 animate-spin" style={{ animationDuration: '4s' }} />
                 <span className="hidden md:inline">Hey Neuro</span>
               </button>
             )}
@@ -146,7 +146,7 @@ const MainApp: React.FC = () => {
                     onClick={() => setLanguage(lang.code)}
                     className={`w-full flex items-center justify-between rounded-xl px-3 py-2 text-xs text-left transition ${
                       language === lang.code
-                        ? 'bg-sky-600 text-white font-bold'
+                        ? 'bg-orange-600 text-white font-bold'
                         : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700'
                     }`}
                   >
@@ -185,7 +185,7 @@ const MainApp: React.FC = () => {
               {portal === 'patient' ? (
                 <>
                   <span className="flex items-center gap-1.5">
-                    <span className={`h-2 w-2 rounded-full ${cameraActive ? 'bg-sky-500 animate-pulse' : 'bg-slate-400'}`} />
+                    <span className={`h-2 w-2 rounded-full ${cameraActive ? 'bg-orange-500 animate-pulse' : 'bg-slate-400'}`} />
                     <span className="text-slate-700 dark:text-slate-300 font-mono">Patient Cam: {cameraActive ? 'ACTIVE (AI Vision Sentinel)' : 'STANDBY'}</span>
                   </span>
                   <span className="flex items-center gap-1.5">

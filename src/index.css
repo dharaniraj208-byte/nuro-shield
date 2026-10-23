@@ -2,13 +2,13 @@
 
 @layer base {
   :root {
-    --primary-blue: #0EA5E9;
-    --primary-teal: #14B8A6;
-    --bg-light: #F8FAFC;
+    --primary-blue: #E06B52;
+    --primary-teal: #C9573E;
+    --bg-light: #F7F5F3;
     --card-light: #FFFFFF;
-    --text-primary-light: #0F172A;
-    --text-secondary-light: #64748B;
-    --border-light: #E2E8F0;
+    --text-primary-light: #211714;
+    --text-secondary-light: #8A7771;
+    --border-light: #E9E0DC;
     
     --success-green: #10B981;
     --warning-amber: #F59E0B;

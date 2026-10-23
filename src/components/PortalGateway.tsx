@@ -57,18 +57,18 @@ export const PortalGateway: React.FC = () => {
           : 'bg-white/95 border-slate-200/80 backdrop-blur-md'
       }`}>
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#0EA5E9] via-[#0284C7] to-[#14B8A6] text-white shadow-lg shadow-[#0EA5E9]/20">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#E06B52] via-[#C9573E] to-[#8F3F2F] text-white shadow-lg shadow-[#E06B52]/20">
             <HeartPulse className="h-6 w-6 animate-pulse" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <span className="text-lg font-bold tracking-tight">
-                Neuro<span className="text-[#0EA5E9]">Shield</span>
+                Neuro<span className="text-[#E06B52]">Shield</span>
               </span>
               <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono font-bold border ${
                 isDark
-                  ? 'bg-sky-950/60 text-sky-300 border-sky-800'
-                  : 'bg-sky-50 text-sky-700 border-sky-200'
+                  ? 'bg-orange-950/60 text-orange-300 border-orange-800'
+                  : 'bg-orange-50 text-orange-700 border-orange-200'
               }`}>
                 CLINICAL GATEWAY
               </span>
@@ -96,7 +96,7 @@ export const PortalGateway: React.FC = () => {
 
           {/* Language Selector */}
           <div className="flex items-center gap-1.5">
-            <Globe className="h-4 w-4 text-[#0EA5E9]" />
+            <Globe className="h-4 w-4 text-[#E06B52]" />
             <div className={`flex rounded-xl p-1 border ${
               isDark ? 'bg-slate-800 border-slate-700' : 'bg-slate-100 border-slate-200'
             }`}>
@@ -106,7 +106,7 @@ export const PortalGateway: React.FC = () => {
                   onClick={() => setLanguage(lang.code)}
                   className={`px-2.5 py-1 text-xs rounded-lg font-semibold transition ${
                     language === lang.code
-                      ? 'bg-[#0EA5E9] text-white shadow-sm'
+                      ? 'bg-[#E06B52] text-white shadow-sm'
                       : isDark
                         ? 'text-slate-400 hover:text-slate-200'
                         : 'text-slate-600 hover:text-slate-900'
@@ -123,8 +123,8 @@ export const PortalGateway: React.FC = () => {
       {/* Main Dual-Portal Selection Gate */}
       <main className="max-w-5xl w-full mx-auto my-auto py-10 space-y-10">
         <div className="text-center space-y-3 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 bg-sky-50 dark:bg-sky-950/50 text-[#0284C7] dark:text-sky-300 font-semibold text-xs px-3.5 py-1 rounded-full border border-sky-200 dark:border-sky-800">
-            <Sparkles className="h-3.5 w-3.5 text-[#0EA5E9]" />
+          <div className="inline-flex items-center gap-1.5 bg-orange-50 dark:bg-orange-950/50 text-[#C9573E] dark:text-orange-300 font-semibold text-xs px-3.5 py-1 rounded-full border border-orange-200 dark:border-orange-800">
+            <Sparkles className="h-3.5 w-3.5 text-[#E06B52]" />
             <span>Role-Based Clinical Governance &amp; AI Telemetry</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -142,22 +142,22 @@ export const PortalGateway: React.FC = () => {
             onClick={handleChoosePatient}
             className={`group cursor-pointer rounded-3xl border p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] flex flex-col justify-between ${
               isDark
-                ? 'bg-slate-900 border-slate-800 hover:border-[#0EA5E9]'
-                : 'bg-white border-slate-200/90 hover:border-[#0EA5E9]'
+                ? 'bg-slate-900 border-slate-800 hover:border-[#E06B52]'
+                : 'bg-white border-slate-200/90 hover:border-[#E06B52]'
             }`}
           >
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#0EA5E9] to-[#14B8A6] text-white shadow-lg shadow-[#0EA5E9]/25 group-hover:scale-110 transition-transform">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#E06B52] to-[#8F3F2F] text-white shadow-lg shadow-[#E06B52]/25 group-hover:scale-110 transition-transform">
                   <User className="h-7 w-7" />
                 </div>
-                <span className="rounded-full bg-sky-50 dark:bg-sky-950/60 px-3 py-1 text-xs font-bold text-[#0284C7] dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+                <span className="rounded-full bg-orange-50 dark:bg-orange-950/60 px-3 py-1 text-xs font-bold text-[#C9573E] dark:text-orange-300 border border-orange-200 dark:border-orange-800">
                   CAMERA &amp; SENSORS READY
                 </span>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold group-hover:text-[#0EA5E9] transition-colors">
+                <h3 className="text-2xl font-bold group-hover:text-[#E06B52] transition-colors">
                   {t('patientPortal')}
                 </h3>
                 <p className={`text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -167,7 +167,7 @@ export const PortalGateway: React.FC = () => {
 
               <div className="space-y-3 pt-2 text-xs">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1 rounded-md bg-sky-100 dark:bg-sky-950/50 text-[#0EA5E9]">
+                  <div className="p-1 rounded-md bg-orange-100 dark:bg-orange-950/50 text-[#E06B52]">
                     <Camera className="h-3.5 w-3.5" />
                   </div>
                   <span className={isDark ? 'text-slate-300' : 'text-slate-700'}>
@@ -175,7 +175,7 @@ export const PortalGateway: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950/50 text-[#14B8A6]">
+                  <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950/50 text-[#8F3F2F]">
                     <Activity className="h-3.5 w-3.5" />
                   </div>
                   <span className={isDark ? 'text-slate-300' : 'text-slate-700'}>
@@ -212,7 +212,7 @@ export const PortalGateway: React.FC = () => {
             <div className={`pt-6 border-t mt-6 ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
               <button
                 type="button"
-                className="w-full rounded-2xl bg-gradient-to-r from-[#0EA5E9] to-[#0284C7] hover:from-[#0284C7] hover:to-[#0369A1] py-3.5 text-xs font-bold text-white shadow-md shadow-[#0EA5E9]/25 transition-all flex items-center justify-center gap-2"
+                className="w-full rounded-2xl bg-gradient-to-r from-[#E06B52] to-[#C9573E] hover:from-[#C9573E] hover:to-[#0369A1] py-3.5 text-xs font-bold text-white shadow-md shadow-[#E06B52]/25 transition-all flex items-center justify-center gap-2"
               >
                 <span>Enter Patient Portal</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -225,13 +225,13 @@ export const PortalGateway: React.FC = () => {
             onClick={handleChooseAdmin}
             className={`group cursor-pointer rounded-3xl border p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:scale-[1.01] active:scale-[0.99] flex flex-col justify-between ${
               isDark
-                ? 'bg-slate-900 border-slate-800 hover:border-[#14B8A6]'
-                : 'bg-white border-slate-200/90 hover:border-[#14B8A6]'
+                ? 'bg-slate-900 border-slate-800 hover:border-[#8F3F2F]'
+                : 'bg-white border-slate-200/90 hover:border-[#8F3F2F]'
             }`}
           >
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#14B8A6] to-emerald-600 text-white shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-tr from-[#8F3F2F] to-emerald-600 text-white shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
                   <Shield className="h-7 w-7" />
                 </div>
                 <span className="rounded-full bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
@@ -240,7 +240,7 @@ export const PortalGateway: React.FC = () => {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold group-hover:text-[#14B8A6] transition-colors">
+                <h3 className="text-2xl font-bold group-hover:text-[#8F3F2F] transition-colors">
                   {t('adminPortal')}
                 </h3>
                 <p className={`text-xs mt-1 ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
@@ -258,7 +258,7 @@ export const PortalGateway: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1 rounded-md bg-sky-100 dark:bg-sky-950/50 text-sky-600">
+                  <div className="p-1 rounded-md bg-orange-100 dark:bg-orange-950/50 text-orange-600">
                     <Video className="h-3.5 w-3.5" />
                   </div>
                   <span className={isDark ? 'text-slate-300' : 'text-slate-700'}>
@@ -282,7 +282,7 @@ export const PortalGateway: React.FC = () => {
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950/50 text-[#14B8A6]">
+                  <div className="p-1 rounded-md bg-teal-100 dark:bg-teal-950/50 text-[#8F3F2F]">
                     <Activity className="h-3.5 w-3.5" />
                   </div>
                   <span className={isDark ? 'text-slate-300' : 'text-slate-700'}>
